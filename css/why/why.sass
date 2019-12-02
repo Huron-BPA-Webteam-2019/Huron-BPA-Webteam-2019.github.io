@@ -1,20 +1,18 @@
 .num
-    font-size: 3em
-    padding-right: 0.25em
-    padding-top: 0
-    border-right: 2px solid black
+    font-size: 2em
+    text-align: center
     font-family: "Courier New"
     font-weight: 200
-@media (min-width: 768px)
-    .num
-        font-size: 5em
 .environment
     i
     font-size: 2em
-    color: #4fdb42
-
+    color: #F7F7F7
+    min-height: 80vh
+    .num
+        text-decoration: underline
 .front-page
     background-image: url('/assets/airflow_home.jpg')
+    min-height: 80vh
 .my-image
     background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2019%2F08%2F12145839%2Feco-friendly-home-getty-0819.jpg&q=25')
     // background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F34%2F2019%2F08%2F12145839%2Feco-friendly-home-getty-0819.jpg&q=25')
@@ -27,6 +25,19 @@
     a:hover + p, p:hover
         display: block
         transition: 1s
-
+@media (min-width: 768px)
+    .right-border
+        border-right: 2px solid white
+    .environment
+        .num
+            text-decoration: none
 // .point p
 //     // display: none
+.jumbotron
+    color: white
+
+@media (max-width: 768px)
+    small
+        font-size: .8em
+i
+    color: white

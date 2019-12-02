@@ -2,4 +2,10 @@
   min-height: 80vh;
   background-image: url("/assets/cube_home.jpg");
 }
+
+.what-jumbotron {
+  border-radius: 15px;
+  background: #0C4122;
+  color: white;
+}
 /*# sourceMappingURL=challenges.css.map */

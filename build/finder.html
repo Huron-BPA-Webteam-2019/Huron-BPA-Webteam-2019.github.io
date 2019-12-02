@@ -28,6 +28,7 @@
                 console.log('sdasds')
                 $('.options').empty()
                 _.each(_.filter(data, item => item.state == this.value), item => {
+
                     base = $(` <div class="card">
                         <div class="card-body">
 
@@ -39,6 +40,15 @@
                             directions</a>
                         </div>
                     </div>`)
+                    if (item.name.length == 0) {
+                        missing = $(`<div class="card"> <div class="card-body">
+                            <h5 class="card-title">Sorry, no results found.</h5>
+                            <p> We are working on adding architects for this state.</p>
+                            </div>
+                            </div>`)
+                        $('.options').append(missing)
+                    } else {
+
                     base.find('span').text(item.address.split(',').slice(-2)[0] + ', ' + item
                         .state)
                     console.log(item)
@@ -48,6 +58,7 @@
                     base.find('a.location').attr('href', 'https://www.google.com/maps/search/' +
                         item.address)
                     $('.options').append(base)
+                    }
                 })
                 // console.log(e.target)
             })
@@ -60,16 +71,19 @@
     </header>
     <div 
         class="container-fluid finder background-image d-flex justify-content-center align-items-center text-center">
-        <h1 class="display-4 header-text">Architect Locator</h1>
+        <div class = "header-text">
+        <h1 class="display-4">Architect Locator</h1>
+        <p class = "lead">Find an architect builder near you</p>
+        </div>
     </div>
     <div class="container start end">
         <div class="text-center"> Photo Credit: </div>
         <hr>
         <div class="row">
             <div class="col">
-                <p>
+                <h5>
                     Use this quick tool to find environmentally friendly builders in the state you live in.
-                </p>
+                </h5>
             </div>
         </div>
         <div class="row">
