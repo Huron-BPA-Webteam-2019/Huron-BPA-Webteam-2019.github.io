@@ -1,36 +1,41 @@
 {"filters": {
     "benefits": [
-        "water heater",
-        "pineapple"
+        "No reliance on energy grid",
+        "Environmentally centered construction"
     ],
     "constraints": [
-        "gas stove",
-        "popcorn"
+        "Cheap Cost",
+        "Limited architects near me"
     ]
 },
 "types": {
     "biophilic": {
         "_score": 0,
-        "water heater": true,
-        "pineapple": false,
-        "gas stove": false
+        "No reliance on energy grid": false,
+        "Environmentally centered construction": true,
+        "Cheap Cost": false,
+        "Limited architects near me": false
     },
     "earthship": {
         "_score": 0,
-        "water heater": false,
-        "pineapple": false,
-        "gas stove": true,
-        "popcorn": true
+        "No reliance on energy grid": true,
+        "Environmentally centered construction": true,
+        "Cheap Cost": true,
+        "Limited architects near me": false
     },
     "neutral": {
         "_score": 0,
-        "water heater": false,
-        "pineapple": false,
-        "gas stove": true,
-        "popcorn": true
+        "No reliance on energy grid": true,
+        "Environmentally centered construction": false,
+        "Cheap Cost": false,
+        "Limited architects near me": true
     },
     "prefab": {
-        "_score": 0
+        "_score": 0,
+        "Environmentally centered construction": false,
+        "No reliance on energy grid": false,
+        "Cheap Cost": true,
+        "Limited architects near me": true
     }
 }
 }
