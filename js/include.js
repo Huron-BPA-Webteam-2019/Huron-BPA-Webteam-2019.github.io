@@ -1,7 +1,7 @@
 $(function () {
     jQuery.each($('[data-load]'), function () {
         // this refers to the element
-        $(this).load("/" + $(this).data("load"))
+        $(this).load("/pages/" + $(this).data("load"))
     })
 })
 
