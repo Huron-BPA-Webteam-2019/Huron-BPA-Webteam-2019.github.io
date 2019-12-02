@@ -17,6 +17,7 @@
 
 .front-page {
   background-image: url("/assets/airflow_home.jpg");
+  min-height: 80vh;
 }
 
 .my-image {
@@ -48,6 +49,16 @@
 }
 
 .jumbotron {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  small {
+    font-size: .8em;
+  }
+}
+
+i {
   color: white;
 }
 /*# sourceMappingURL=why.css.map */
