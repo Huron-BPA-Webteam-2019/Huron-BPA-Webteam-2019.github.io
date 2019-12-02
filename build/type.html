@@ -12,6 +12,8 @@
     <script src="/js/include.js"></script>
     <link href="/css/main.css" rel='stylesheet'>
     <link href="/css/build/build.css" rel='stylesheet'>
+    <link rel='icon' href="/assets/favicon.png" type="image/png">
+
     <title>Type Selector</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
     <script src="https://kit.fontawesome.com/3aa210e078.js" crossorigin="anonymous"></script>
@@ -34,7 +36,7 @@
         })
         $(document).on('change', 'input[type="checkbox"]', function (e) {
             // console.log(e.target.checked, e.target.value)
-            let clean_val = e.target.value.replace(/ |\./, '_')
+            let clean_val = e.target.value.replace(/ |\./g, '_')
             if (e.target.checked) {
                 $('.card').each((i, elem) => {
                     let kind = _.filter(elem.classList, (v, _) => ['biophilic','earthship','prefab','neutral'].indexOf(v) > -1)[0]
