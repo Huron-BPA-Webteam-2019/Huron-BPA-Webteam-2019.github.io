@@ -21,7 +21,9 @@
     <script>
         allValues = {}
         scores = {}
+        biohomeTypes = ['biophilic','earthship','prefab','neutral']
         $.getJSON("/other/types.json", function (data) {
+            // Add checkboxes to page from JSON file
             for (let benefit of data.filters.benefits) {
                 $('.benefits').append(
                     `<input type="checkbox" value="${benefit}"> ${benefit}<br>`
@@ -35,31 +37,29 @@
             allValues = data.types
         })
         $(document).on('change', 'input[type="checkbox"]', function (e) {
-            // console.log(e.target.checked, e.target.value)
             let clean_val = e.target.value.replace(/ |\./g, '_')
             if (e.target.checked) {
+                // check each card
                 $('.card').each((i, elem) => {
-                    let kind = _.filter(elem.classList, (v, _) => ['biophilic','earthship','prefab','neutral'].indexOf(v) > -1)[0]
+                    let kind = _.filter(elem.classList, (v, _) => biohomeTypes.indexOf(v) > -1)[0]
                     let mode = '<i class="fas fa-minus"></i>'
                     let targets = _.pick(allValues[kind], e.target.value)
                     if (!_.isEmpty(targets)) {
                         _.each(targets, function (val) {
-                            mode = val ? '<i class="fas fa-check"></i>' :
-                                '<i class="fas fa-times"></i>'
-                            $(elem).find('.filters').append(
-                                `<p class="${clean_val}"> ${mode} ${e.target.value}</p>`)
+                            mode = val ? '<i class="fas fa-check"></i>' :'<i class="fas fa-times"></i>'
+                            // add a check or x depending on whether the value from the JSON file was true or false
+                            $(elem).find('.filters').append(`<p class="${clean_val}"> ${mode} ${e.target.value}</p>`)
                             allValues[kind]._score += val ? 1 : -1
                         })
                     } else {
+                        // otherwise add dash indicating value not in JSON file
                         $(elem).find('.filters').append(
                             `<p class="${clean_val}"> <i class="fas fa-minus"></i> ${e.target.value}</p>`
                         )
                     }
                 })
-                // add badge to highest ranking
             } else {
                 $(`.${clean_val}`).remove()
-                // $('.badge-wrapper').html('')
                 // subtract score of element when it is unchecked
                 $('.card').each((i, elem) => {
                     let kind = _.filter(elem.classList, (v, _) => v !== "card")[0]
@@ -68,18 +68,14 @@
                     }
                 })
             }
-            // add badge
-            let sortedScores = _.sortBy(_.pairs(allValues), function (v) {
-                return v[1]._score
-            }).reverse()
+            let sortedScores = _.sortBy(_.pairs(allValues), function (v) { return v[1]._score }).reverse()
+            // Clear existing badge and border
             $('.badge').empty()
             $('.card').removeClass('border-dark')
             $(`.${sortedScores[0][0]}`).addClass('border-dark')
-            console.log(`.${sortedScores[0][0]} .badge-wrapper`)
-            $(`.${sortedScores[0][0]} .badge-wrapper`).html(
-                '<span class="badge badge-primary">Best choice</span>')
-            $(`.${sortedScores[1][0]} .badge-wrapper`).html(
-                '<span class="badge badge-secondary">Runner up</span>')
+            // Add new badge and border to top 2 scores
+            $(`.${sortedScores[0][0]} .badge-wrapper`).html('<span class="badge badge-primary">Best choice</span>')
+            $(`.${sortedScores[1][0]} .badge-wrapper`).html('<span class="badge badge-secondary">Runner up</span>')
         })
     </script>
     <title>Types of biohomes</title>
