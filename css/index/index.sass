@@ -1,8 +1,7 @@
 .front-page
-    background-image: url('/assets/tesla_house.jpg')
+    background-image: url('/assets/house_car.jpg')
     padding: 0
     margin: 0
-
 .info
     padding-top: 20%
     border-radius: 3em
@@ -23,6 +22,11 @@
     color: whitesmoke
 .what-jumbotron .why-jumbotron .who-jumbotron
     color: whitesmoke
+.fp-next
+    // avoid dots
+    right: 50px !important
+.fp-bottom span
+    background: white !important
 #fp-nav ul li a span
     background: white
 .a
@@ -36,3 +40,12 @@
 @media (max-width: 768px)
     .display-4
         font-size: 2.5em
+    .mobile
+        display: block
+    .desktop
+        display: none
+@media (min-width: 768px)
+    .mobile
+        display: none
+    .desktop
+        display: block
