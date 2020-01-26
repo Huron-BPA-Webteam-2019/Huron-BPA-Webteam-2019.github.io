@@ -24,7 +24,7 @@
             // Add option for each state
             _.each(_.uniq(data, (x) => x.state), item => {
                 $('.custom-select').append(
-                    `<option class='item' value=${item.state}>${item.state}</option>`)
+                    `<option class='item' value="${item.state}">${item.state}</option>`)
             })
             // When a state is selected...
             $('.custom-select').change(function () {

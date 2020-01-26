@@ -1,5 +1,5 @@
 .front-page {
-  background-image: url("/assets/house_car.jpg");
+  background-image: url("/assets/display_home_3.jpg");
   padding: 0;
   margin: 0;
 }
@@ -50,23 +50,29 @@
 }
 
 .a {
-  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#9cc6d9));
-  background: linear-gradient(180deg, white 0%, #9cc6d9 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#9cc6d9), to(white));
+  background: linear-gradient(0deg, #9cc6d9 0%, white 100%);
 }
 
 .b {
-  background: -webkit-gradient(linear, left bottom, left top, from(white), to(#9cc6d9));
-  background: linear-gradient(0deg, white 0%, #9cc6d9 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#9cc6d9), to(white));
+  background: linear-gradient(180deg, #9cc6d9 0%, white 100%);
+}
+
+@media (min-width: 768px) {
+  .b .fp-bottom {
+    display: none;
+  }
 }
 
 .c {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, white), to(#9cd9a2));
-  background: linear-gradient(180deg, white 10%, #9cd9a2 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #9cd9a2), to(white));
+  background: linear-gradient(0deg, #9cd9a2 10%, white 100%);
 }
 
 .d {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, white), to(#9cd9a2));
-  background: linear-gradient(0deg, white 10%, #9cd9a2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #9cd9a2), to(white));
+  background: linear-gradient(180deg, #9cd9a2 10%, white 100%);
 }
 
 @media (max-width: 768px) {
