@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Include this on every page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/include.js"></script>
+    <link href="/css/main/main.css" rel='stylesheet'>
+    <link href="/css/types/types.css" rel='stylesheet'>
+    <link rel='icon' href="/assets/favicon.png" type="image/png">
+    <script src="https://kit.fontawesome.com/3aa210e078.js" crossorigin="anonymous"></script>
+    <!-- Include this on every page -->
+    <title>Bio-home Types</title>
+    <script>
+        $(document).ready(() => {
+            let hash = window.location.hash
+            if (hash) {
+                hash = hash.substr(1)
+                let target = `a[href$="${hash}"]`
+                $(target).tab("show")
+            }
+        })
+    </script>
+</head>
+
+<body
+    style="background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(228, 238, 231, 1)62%, rgb(170, 203, 245)100%);">
+    <header data-load="templates/header.html">
+    </header>
+    <div class="container-fluid front-page background-image d-flex justify-content-center
+        align-items-center text-center">
+        <div class="header-text">
+            <h1 class="display-4">Types of Bio-homes</h1>
+            <p class="lead"> Analyzing the different types of bio-homes available </p>
+        </div>
+    </div>
+    <div class="container end">
+
+        <div class="text-center"> Photo Credit: “194. Home Builders Embrace Net-Zero with New Labelling Program.” Green
+            Energy Futures, 10 May 2018,
+            www.greenenergyfutures.ca/episode/171-home-builders-embrace-net-zero-labelling.</div>
+        <hr>
+        <div class="row">
+            <div class="nav nav-pills justify-content-around">
+                <a class='nav-link'> Types: </a>
+                <a class='nav-link active' data-toggle="tab" href="#bio">Biophilic</a>
+                <a class='nav-link' data-toggle="tab" href="#earth">Earthship</a>
+                <a class='nav-link' data-toggle="tab" href="#neutral">Neutral</a>
+                <a class='nav-link' data-toggle="tab" href="#pre">Prefabricated</a>
+            </div>
+        </div>
+        <div class="tab-content mt-4" style="margin-bottom: 3em">
+            <div class="tab-pane active fade show" id="bio">
+                <div class="container">
+                    <!-- mt = margin top [1-5] -->
+                    <h1 class="text-center mt-5">Biophilic Homes</h1>
+                    
+                     <hr style="border: 0.5px solid black;">
+                     <br><br>
+                     <div class="row">
+                        <!-- 12 "columns to work with" 8, 4-->
+                       
+                        <div class="col-md-6">
+                            <ul>
+                                <!-- m(b|t|l|r) = margin (bottom|top|left|right) -->
+                                <h3 class="mb-4"> <b> What is a Biophillic Home? </b> </h3>
+                                Biophilic homes encompass features which are incorporated through color, water,
+                                sound, air, plants, and animals.
+                                <div>
+
+                                    Most biophilic designs include natural patterns and processes which evoke human
+                                    emotion.
+
+                                </div>
+                                <div>
+                                    Specifically arches, vaults, and domes invoke human emotion.
+                                </div>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <img src="/assets/biophillic_1_caption.jpg" class="img-fluid isaac-rounded"
+                                alt="Earthship home">
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class = "row mt-5">
+                        <div class="col-md-5">
+
+                            <img src="/assets/biophillic_2_caption.jpg" class="img-fluid isaac-rounded"
+                                alt="Earthship home">
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class = "mb-4"> <b> Why Have a Biophillic Home? </b> </h3>
+                            <div>
+                                In most biophilic homes light and space also vary in terms of their
+                                effectiveness
+                                in influencing the way in which we react to them.
+
+                            </div>
+                            <div>
+                                Most of these designs create a closer connection of humans to the natural world.
+
+                            </div>
+                            <div>
+                                Biophilic homes aim to reach a design that includes historical, cultural,
+                                geographical, spiritual, and/or ecological features in order to strengthen a
+                                human’s
+                                relationship with their surrounding natural environment.
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade show" id="earth">
+                <div class="container">
+
+                    <h1 class="text-center mt-5">Earthship Homes</h1>
+                    <hr style="border: 0.5px solid black;">
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="mb-4"> <b> What are Earthship Homes? </b></h3>
+                            <div>
+                                Earthship homes are made from self-recycled or natural material, which is
+                                beneficial to the environment.
+                            </div>
+                            <div>
+                                These homes are able to use less energy and are more
+                                cost-friendly.
+                            </div>
+                            <div>
+                                They are self sustaining systems, meaning that they can last for a long time;
+                                they are
+                                durable.
+                            </div>
+
+                            <div>
+                                Energy is derived from solar or wind power with small scale windmills and solar
+                                panels.
+                            </div>
+
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <img src="/assets/earth_1_caption.jpg" class="img-fluid isaac-rounded "
+                                alt="Earthship home"></img>
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class="row mt-5 mb-5">
+                    
+                        <div class = "row mb-5">
+                        <div class="col-md-5">
+                            <img src="/assets/earth_2_caption.jpg" class="img-fluid isaac-rounded "
+                                alt="Earthship home"></img>
+                        </div>
+                        <div class = "col-md-1"></div>
+                        <div class="col-md-6">
+                            <h3 class = "mb-4"> <b> Why Have a Earthship Home? </b> </h3>
+
+                            <div>
+                                An example of earthship homes is found in the famous Great Wall of China.
+                            </div>
+                            <div>
+                                Construction methods similarly used for earthship homes were applied during the
+                                construction of the Great Wall Of China.
+                            </div>
+                            <div>
+                                This type of construction makes these homes very resistant to weathering.
+                            </div>
+                            <div>
+                                The walls of an earthship home range from 19-24 inches of thickness, making it
+                                extremely quiet and able to quickly
+                                adapt to changes in noise levels.
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade show" id="neutral">
+                <div class="container">
+
+                    <h1 class="text-center mt-5">Neutral Homes</h1>
+                    <hr style="border: 0.5px solid black;">
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class = "mb-4"> <b> What are Neutral Homes? </b> </h3>
+                            <div>
+                                Neutral homes, also known as zero-energy or net-zero homes, leave no carbon
+                                footprint behind.
+                            </div>
+                            <div>
+                                They contain solar panels, tight insulation, and water pumps, which are important
+                                bio-friendly features.
+                            </div>
+                            <div>
+                                These home significantly decrease the heating needs required in a regular home.
+                            </div>
+                            <div>
+                                They are also cost-friendly.
+                            </div>
+
+                        </div>
+                        <div class = "col-md-1"> </div>
+                        <div class="col-md-5">
+                            <img src="/assets/neutral_1_caption.jpg" class="img-fluid isaac-rounded"
+                                alt="Earthship home"></img>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="row mt-5">
+                            <div class="col-md-5">
+                                <img src="/assets/neutral_2_caption.jpg" class="img-fluid isaac-rounded "
+                                    alt="Earthship home"></img>
+                            </div>
+                            <div class = "col-md-1"></div>
+                            <div class="col-md-6">
+                                <h3 class = "mb-4"> <b> Why Have a Neutral Homes? </b> </h3>
+                                <div>
+                                    Neutral homes are available in any shape and style which can fit the owner's
+                                    lifestyle.
+                                </div>
+                                <div>
+                                    They are able to withstand any climate from places such as Arizona to Alaska.
+                                </div>
+                                <div>
+                                    Neutral homes leave the owner of the house with a net zero energy bill.
+                                </div>
+                                <div>
+                                    These neutral homes are high quality homes, as they are comfortable, healthy, quiet,
+                                    and
+                                    sustainable to live in.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade show" id="pre">
+                <div class="container">
+
+                    <h1 class="text-center mt-5">Prefabricated Houses</h1>
+                    <hr style="border: 0.5px solid black;">
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class = "mb-4" > <b> What are Prefabricated Houses? </b> </h3>
+                            <div>
+                                A prefabricated home, also known as a prefab home, is built in a factory and shipped to
+                                the
+                                location desired.
+
+                            </div>
+                            <div>
+                                Prefab houses utilize measurements which are exact to ensure that there is no waste
+                                left
+                                over in the process.
+                            </div>
+                            <div>
+                                Prefab homes have less waste associated with them, which is beneficial for the
+                                environment.
+                            </div>
+
+                            <div>
+                                Some prefab homes are constructed with eco-friendly solar panels.
+                            </div>
+                            <div>
+                                They are constructed in a short amount of time compared to traditional homes. Prefab
+                                homes on average are finished in around 5 months, with the earliest being 2
+                                months.
+
+                            </div>
+
+                        </div>
+                        <div class = "col-md-1">
+                        </div>
+                        <div class="col-md-5">
+                            <img src="/assets/prefab_1_caption.jpg" class="img-fluid isaac-rounded "
+                                alt="Earthship home"></img>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class = "row mt-5">
+                        <div class="col-md-5">
+                            <img src="/assets/prefab_2_caption.jpg" class="img-fluid isaac-rounded "
+                                alt="Earthship home"></img>
+                        </div>
+                        <div class = "col-md-1">  </div>
+                        <div class="col-md-6">
+                            <div>
+                                <h3 class = "mb-4"> <b> Why Choose Prefabricated Houses </b> </h3>
+                                    
+                                    <div> 
+                                        Prefabricated houses can  come in various luxury designs. 
+                                    </div>
+                                    <div> 
+                                        They are very cost-effective with a price range of $10,000 to $15,000 
+                                    </div>
+                                    <div> 
+                                        Prefab homes have a lower average permit value. The average permit value for a
+                                        prefab home is $76.80 per square, while a traditional home has an average permit
+                                        value of per square foot. 
+                                    </div>
+                                
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <footer data-load="templates/footer.html"></footer>
+
+</body>
+
+</html>
