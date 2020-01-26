@@ -23,6 +23,9 @@ for row in items:
         continue
 
     ending = row["url"].split('.')[-1].lower().replace('jpeg', 'jpg', -1)
+    img_src = join(row["filename"] + f'.{ending or "jpg"}')
+    with open(join(website,'pages','format.html'), 'a') as file:
+        file.write(f'<img src="/assets/{img_src}" alt="{row["filename"]}">\n')
     file_path = join(website, "assets", row["filename"] + f'.{ending or "jpg"}')
     file_path_caption = join(website, "assets", row["filename"] + f'_caption.{ending or "jpg"}')
     try:

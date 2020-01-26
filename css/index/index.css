@@ -59,15 +59,15 @@
   background: linear-gradient(180deg, #9cc6d9 0%, white 100%);
 }
 
-@media (min-width: 768px) {
-  .b .fp-bottom {
-    display: none;
-  }
-}
-
 .c {
   background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #9cd9a2), to(white));
   background: linear-gradient(0deg, #9cd9a2 10%, white 100%);
+}
+
+@media (min-width: 768px) {
+  .c .fp-bottom {
+    display: none;
+  }
 }
 
 .d {
