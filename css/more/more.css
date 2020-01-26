@@ -6,6 +6,10 @@
   background-image: url("https://i.imgur.com/SQwafVl.jpg");
 }
 
+.predictor {
+  background-image: url("/assets/treehouse_2.jpg");
+}
+
 .sources {
   background-image: url("/assets/tesla_house.jpg");
 }
