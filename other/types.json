@@ -1,7 +1,8 @@
 {"filters": {
     "benefits": [
         "No reliance on energy grid",
-        "Environmentally centered construction"
+        "Environmentally centered construction",
+        "Large living space"
     ],
     "constraints": [
         "Cheap Cost",
@@ -14,6 +15,7 @@
         "No reliance on energy grid": false,
         "Environmentally centered construction": true,
         "Cheap Cost": false,
+        "Large living space": true,
         "Limited architects near me": false
     },
     "earthship": {
@@ -21,6 +23,7 @@
         "No reliance on energy grid": true,
         "Environmentally centered construction": true,
         "Cheap Cost": true,
+        "Large living space": false,
         "Limited architects near me": false
     },
     "neutral": {
@@ -28,6 +31,7 @@
         "No reliance on energy grid": true,
         "Environmentally centered construction": false,
         "Cheap Cost": false,
+        "Large living space": true,
         "Limited architects near me": true
     },
     "prefab": {
@@ -35,6 +39,7 @@
         "Environmentally centered construction": false,
         "No reliance on energy grid": false,
         "Cheap Cost": true,
+        "Large living space": false,
         "Limited architects near me": true
     }
 }
