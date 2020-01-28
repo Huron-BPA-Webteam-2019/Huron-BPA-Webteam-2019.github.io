@@ -39,12 +39,14 @@ a
     align-items: center
 .text-center
     text-align: center
-.background-image
-    margin-top: 3.5em
+.image-fill
     background-repeat: no-repeat
     // background-attachment: fixed
     background-position: center
     background-size: cover
+.background-image
+    margin-top: 3.5em
+    @extend .image-fill
 .background-image:before
     content: ""
     display: block

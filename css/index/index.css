@@ -15,25 +15,7 @@
 }
 
 .jumbotron {
-  background: white;
-}
-
-.what-jumbotron {
   background: #0E4365 !important;
-  color: whitesmoke;
-}
-
-.who-jumbotron {
-  background: #1F6CB3 !important;
-  color: whitesmoke;
-}
-
-.why-jumbotron {
-  background: #0C4122 !important;
-  color: whitesmoke;
-}
-
-.what-jumbotron .why-jumbotron .who-jumbotron {
   color: whitesmoke;
 }
 
@@ -60,8 +42,9 @@
 }
 
 .c {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #c3e7c7), to(white));
-  background: linear-gradient(0deg, #c3e7c7 10%, white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, white), color-stop(80%, #c9e6c6), to(#95ce90));
+  background: linear-gradient(180deg, white 10%, #c9e6c6 80%, #95ce90 100%);
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -73,6 +56,10 @@
 .d {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #c3e7c7), to(white));
   background: linear-gradient(180deg, #c3e7c7 10%, white 100%);
+}
+
+.e {
+  color: white;
 }
 
 @media (max-width: 768px) {
