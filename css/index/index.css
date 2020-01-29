@@ -76,6 +76,7 @@
 
 .card-body {
   height: 30vh;
+  border: 8px 8px 0px 0px;
 }
 
 hr {
