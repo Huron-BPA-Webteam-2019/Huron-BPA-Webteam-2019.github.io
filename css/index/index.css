@@ -54,8 +54,8 @@
 }
 
 .d {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #c3e7c7), to(white));
-  background: linear-gradient(180deg, #c3e7c7 10%, white 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #c3e7c7), to(white));
+  background: linear-gradient(0deg, #c3e7c7 10%, white 100%);
 }
 
 .e {
