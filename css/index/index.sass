@@ -16,6 +16,9 @@
     right: 50px !important
 .fp-bottom span
     background: white !important
+@media (min-width: 992px)
+    .fp-bottom span
+        display: none
 #fp-nav ul li a span
     background: white
 .a
@@ -24,13 +27,15 @@
 
     background: linear-gradient(180deg, rgba(156, 198, 217, 1) 0%, rgba(255, 255, 255, 1) 100%)
 .c
-    @media (min-width: 768px)
-        .fp-bottom
-            display: none
+    .fp-bottom
+        bottom: 30px !important
     background: linear-gradient(180deg,  rgba(255, 255, 255, 1) 10%,  rgba(201, 230, 198, 1) 80%, rgba(149, 206, 144, 1) 100%)
     color: white
 .d
     background: linear-gradient(0deg, #c3e7c7  10%,  rgba(255, 255, 255, 1) 100%)
+    @media (min-width: 992px)
+        .fp-bottom span
+            display: none
 .e
     color: white
 @media (max-width: 768px)
@@ -40,10 +45,15 @@
         // font-size: 2em
 @media (min-width: 768px)
     .types-offset
-        padding-top: 5em
+        padding-top: 3em
         // font-size: 4em
 .card-body
     height: 30vh 
     border: 8px 8px 0px 0px
 hr
     border: 1px solid black
+.sus-margin-thing
+    margin-left: 4em
+    @media (min-width: 768px)
+        margin-left: 0;
+    margin-right: 4em

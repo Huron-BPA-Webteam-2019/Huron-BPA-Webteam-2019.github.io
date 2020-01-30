@@ -24,7 +24,7 @@ async function returnData() {
     console.log('Running model...')
 
     // Load model
-    const model = await tf.loadLayersModel('other/prediction/model.json');
+    const model = await tf.loadLayersModel('/other/prediction/model.json');
             //file needs to be hosted directly from a server for it to run 
             //When the tensor is outputted correctly once a correct model is loaded from a server.
             //sample model for testing: https://hkinsley.com/static/tfjsmodel/model.json
@@ -34,7 +34,7 @@ async function returnData() {
     // Load data
     var nroom = $('#nroom').val();// || 10;
     var sfoot = $('#sfoot').val(); //|| 1656;
-    var lspace = $('#lspace').val();// || 1656; 
+    var lspace = $('#lspace').val();
 
 
     // [Green living area, Total number of rooms above basement, 1st Floor Square Footage]
@@ -42,21 +42,22 @@ async function returnData() {
     console.log("Using user data", userData);
 
     // Format inputs
-    input_initial = tf.tensor(userData,[1,3],'float32');
+    input_initial = tf.tensor([2.0,2.0,2000],[1,3],'float32');
     input = input_initial.log(); // Normalizing the data
+
     var readable_input = input.dataSync()
     console.log("HERE IS THE MODEL INPUT", readable_input);
 
     // Create prediction
-    prediction = model.predict(input,'float32'); 
-    var readable_pred = prediction.dataSync()
+    prediction = model.predict(input); //
+    var readable_pred = prediction.dataSync();
     console.log("HERE IS THE MODEL DATA OUTPUT", readable_pred);
 
     // Un-normalize outputs
     output = tf.exp(prediction);
-
+    console.log(output.dataSync());
     // Log predictions
-    $('#epic').text(prediction)
+    $('#epic').text(output.dataSync());
     //console.log("Before exponent", prediction);
     //console.log('We got the output', output);
     
@@ -85,10 +86,6 @@ _.defer(returnData);
             https://worldarchitecture.org/article-links/eehvh/peter-pichler-architecture-designs-sustainable-tree-houses-in-a-wild-forest-of-west-virginia.html.
             Accessed 26 Jan. 2020. </div>
 
-            
-         
-
-
         <hr>
         <form>
             <div id="epic"></div>
@@ -111,12 +108,11 @@ _.defer(returnData);
 
 
                 <!-- <button type="submit" class="btn btn-primary mt-2">Submit</button> -->
-                <!-- <button type="submit" class="btn btn-primary mt-2">Submit</button> -->
+          
                 <button class="btn btn-primary mt-2" onclick = "returnData()"> Return value </button>
                 <p id = 'v'></p>
                  
         </form>
-
 
     </div>
 
@@ -128,46 +124,7 @@ _.defer(returnData);
         <div data-load="templates/footer.html">
         </div>
     </footer>
-
-
-<script>
-// function getValue(){
-   
-//     import * as tf from '@tensorflow/tfjs-node' //importing the tensorflow
-
-//     var grn_liv = parseInt(document.getElementById("lspace").value); //getting the green living space
-//     var first_footage = parseInt(document.getElementById("sfoot").value); //getting the 1st square 
-     
-//     var bedrooms = parseInt(document.getElementById("nbed").value);
-//     var bathrooms = parseInt(document.getElementById("nbath").value);
-//     var other_rooms = parseInt(document.getElementById("n_otherrooms").value);
-
-//     var rooms = bedrooms + bathrooms + other_rooms; //getting the rooms
-
-//     //document.getElementById("v").innerHTML = parseInt(document.getElementById("lspace").value) + parseInt(document.getElementById("sfoot").value);
-
-
-
-
-//     //muy importante
-//     const model = await tf.loadLayersModel('   #Insert filepath on webserver here#   /model.json'); //need to upload the model.json to server and then use link
-//     //muy importante
     
-
-//     input_initial = tf.tensor( [grn_liv, rooms, first_footage] , [1,3], 'float64');  //[1,3] and 'float64' are constant do not change.
-//     input = tf.math.log(input_initial);
-
-//     prediction = model.predict(  tf.tensor2d(input)  );
-//     output = tf.math.exp(prediction);
-
-
-//     document.getElementById("v").innerHTML = rooms2;
-// }
-//getValue();
-</script>    
-
-
-
 </body>
 
 </html>

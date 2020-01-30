@@ -1,7 +1,7 @@
 {
     "format": "layers-model",
     "generatedBy": "keras v2.2.4-tf",
-    "convertedBy": "TensorFlow.js Converter v1.4.0",
+    "convertedBy": "TensorFlow.js Converter v1.5.2",
     "modelTopology": {
         "keras_version": "2.2.4-tf",
         "backend": "tensorflow",
@@ -26,15 +26,12 @@
                             "kernel_initializer": {
                                 "class_name": "GlorotUniform",
                                 "config": {
-                                    "seed": null,
-                                    "dtype": "float32"
+                                    "seed": null
                                 }
                             },
                             "bias_initializer": {
                                 "class_name": "Zeros",
-                                "config": {
-                                    "dtype": "float32"
-                                }
+                                "config": {}
                             },
                             "kernel_regularizer": null,
                             "bias_regularizer": null,
@@ -55,15 +52,12 @@
                             "kernel_initializer": {
                                 "class_name": "GlorotUniform",
                                 "config": {
-                                    "seed": null,
-                                    "dtype": "float32"
+                                    "seed": null
                                 }
                             },
                             "bias_initializer": {
                                 "class_name": "Zeros",
-                                "config": {
-                                    "dtype": "float32"
-                                }
+                                "config": {}
                             },
                             "kernel_regularizer": {
                                 "class_name": "L1L2",
@@ -90,15 +84,12 @@
                             "kernel_initializer": {
                                 "class_name": "GlorotUniform",
                                 "config": {
-                                    "seed": null,
-                                    "dtype": "float32"
+                                    "seed": null
                                 }
                             },
                             "bias_initializer": {
                                 "class_name": "Zeros",
-                                "config": {
-                                    "dtype": "float32"
-                                }
+                                "config": {}
                             },
                             "kernel_regularizer": null,
                             "bias_regularizer": null,
