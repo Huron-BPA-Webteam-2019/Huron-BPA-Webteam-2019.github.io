@@ -22,25 +22,51 @@
     <script>
 async function returnData() {
     console.log('Running model...')
-    const model = await tf.loadLayersModel('/other/prediction/model.json'); // model.json is given by me-->
-    
-    
-    var nbath = $('#nbath').value();
-    var n = $('#nbath').value();
-    var nbath = $('#nbath').value();
-    input_initial = tf.tensor([100,100,100], [3,1], 'float64'); // <!-- [1,3] and 'float64' are constant do not change --> // input needs to be formatted as such: [ [Green living area, Total number of rooms above basement, 1st Floor Square Footage] ]
-    input = tf.math.log(input_initial);
-    
-    prediction = model.predict( input  ); //if shape error try tf.predict(tf.tensor(input))
-    output = tf.math.exp(prediction); //Reformatting output data
-    console.log('We got the output', output);
-}
 
-_.defer(returnData());
+    // Load model
+    const model = await tf.loadLayersModel('other/prediction/model.json');
+            //file needs to be hosted directly from a server for it to run 
+            //When the tensor is outputted correctly once a correct model is loaded from a server.
+            //sample model for testing: https://hkinsley.com/static/tfjsmodel/model.json
+            //If localhost//5500 does not detect, try running from https-server -c1 --cors . in your commandline
+
+
+    // Load data
+    var nroom = $('#nroom').val();// || 10;
+    var sfoot = $('#sfoot').val(); //|| 1656;
+    var lspace = $('#lspace').val();// || 1656; 
+
+
+    // [Green living area, Total number of rooms above basement, 1st Floor Square Footage]
+    var userData = [lspace,nroom,sfoot];     
+    console.log("Using user data", userData);
+
+    // Format inputs
+    input_initial = tf.tensor(userData,[1,3],'float32');
+    input = input_initial.log(); // Normalizing the data
+    var readable_input = input.dataSync()
+    console.log("HERE IS THE MODEL INPUT", readable_input);
+
+    // Create prediction
+    prediction = model.predict(input,'float32'); 
+    var readable_pred = prediction.dataSync()
+    console.log("HERE IS THE MODEL DATA OUTPUT", readable_pred);
+
+    // Un-normalize outputs
+    output = tf.exp(prediction);
+
+    // Log predictions
+    $('#epic').text(prediction)
+    //console.log("Before exponent", prediction);
+    //console.log('We got the output', output);
+    
+}
+_.defer(returnData); 
+
     </script>    
     
     <!-- Include this on every page -->
-    <title>Document</title>
+    <title>Housing Price Predictor</title>
 
 </head>
 
@@ -65,6 +91,7 @@ _.defer(returnData());
 
         <hr>
         <form>
+            <div id="epic"></div>
             <div class="form-group">
                 <label for="lspace">Green Living Space, e.g. size of yard</label>
                 <input type="number"  class="form-control" id="lspace" placeholder="1000 (ft^2)">
@@ -73,33 +100,19 @@ _.defer(returnData());
             
             <div class="form-group">
             
-                <label for="sfoot">1st Floor Square Footage</label>
+                <label for="sfoot">Square Footage (Above basement)</label>
                 <input type="number"  class="form-control" id="sfoot" placeholder="2000 (ft^2)">
             </div>      
-            
-            <div class="form-group">
-                
-                <label for="nbed">Number of Bedrooms(Above basement)</label>
-                <input type="number" class="form-control" id="nbed" placeholder="3">
-            </div>
 
             <div class="form-group">
-                <label for="nbath">Number of Bathrooms(Above basement)</label>
+                <label for="nroom">Number of Rooms (Above basement)</label>
                 <input type="number" class="form-control" id="nbath" placeholder="1">
             </div>
 
 
                 <!-- <button type="submit" class="btn btn-primary mt-2">Submit</button> -->
-
-
-
-            <div class="form-group">
-
-                <label for="nbath">Number of Other Rooms (Above basement)</label>
-                <input type="number" class="form-control" id="n_otherrooms" placeholder="1">
-            </div>
                 <!-- <button type="submit" class="btn btn-primary mt-2">Submit</button> -->
-                <button onclick = "returnData()"> Return value </button>
+                <button class="btn btn-primary mt-2" onclick = "returnData()"> Return value </button>
                 <p id = 'v'></p>
                  
         </form>
