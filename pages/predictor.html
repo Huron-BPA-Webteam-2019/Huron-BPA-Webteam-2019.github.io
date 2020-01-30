@@ -14,8 +14,34 @@
     <link href="/css/more/more.css" rel='stylesheet'>
     <link rel='icon' href="/assets/favicon.png" type="image/png">
     <script src="https://kit.fontawesome.com/3aa210e078.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/rfjs@0.11.2"></script> -->
+    
+    <script>
+async function returnData() {
+    console.log('Running model...')
+    const model = await tf.loadLayersModel('/other/prediction/model.json'); // model.json is given by me-->
+    
+    
+    var nbath = $('#nbath').value();
+    var n = $('#nbath').value();
+    var nbath = $('#nbath').value();
+    input_initial = tf.tensor([100,100,100], [3,1], 'float64'); // <!-- [1,3] and 'float64' are constant do not change --> // input needs to be formatted as such: [ [Green living area, Total number of rooms above basement, 1st Floor Square Footage] ]
+    input = tf.math.log(input_initial);
+    
+    prediction = model.predict( input  ); //if shape error try tf.predict(tf.tensor(input))
+    output = tf.math.exp(prediction); //Reformatting output data
+    console.log('We got the output', output);
+}
+
+_.defer(returnData());
+    </script>    
+    
     <!-- Include this on every page -->
     <title>Document</title>
+
 </head>
 
 <body>
@@ -32,30 +58,53 @@
             Forest of West Virginia.” World Architecture Community,
             https://worldarchitecture.org/article-links/eehvh/peter-pichler-architecture-designs-sustainable-tree-houses-in-a-wild-forest-of-west-virginia.html.
             Accessed 26 Jan. 2020. </div>
+
+            
+         
+
+
         <hr>
         <form>
-        
             <div class="form-group">
                 <label for="lspace">Green Living Space, e.g. size of yard</label>
-                <input type="number" step="50" class="form-control" id="lspace" placeholder="1000 (ft^2)">
+                <input type="number"  class="form-control" id="lspace" placeholder="1000 (ft^2)">
             </div>
+            
+            
             <div class="form-group">
             
-                <label for="sfoot">House Square Footage</label>
-                <input type="number" step="100" class="form-control" id="sfoot" placeholder="2000 (ft^2)">
-            </div>
+                <label for="sfoot">1st Floor Square Footage</label>
+                <input type="number"  class="form-control" id="sfoot" placeholder="2000 (ft^2)">
+            </div>      
+            
             <div class="form-group">
                 
-                <label for="nbed">Number of Bedrooms</label>
+                <label for="nbed">Number of Bedrooms(Above basement)</label>
                 <input type="number" class="form-control" id="nbed" placeholder="3">
             </div>
-            <div class="form-group">
 
-                <label for="nbath">Number of Bathrooms</label>
+            <div class="form-group">
+                <label for="nbath">Number of Bathrooms(Above basement)</label>
                 <input type="number" class="form-control" id="nbath" placeholder="1">
             </div>
-                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+
+
+                <!-- <button type="submit" class="btn btn-primary mt-2">Submit</button> -->
+
+
+
+            <div class="form-group">
+
+                <label for="nbath">Number of Other Rooms (Above basement)</label>
+                <input type="number" class="form-control" id="n_otherrooms" placeholder="1">
+            </div>
+                <!-- <button type="submit" class="btn btn-primary mt-2">Submit</button> -->
+                <button onclick = "returnData()"> Return value </button>
+                <p id = 'v'></p>
+                 
         </form>
+
+
     </div>
 
     <footer>
@@ -66,6 +115,45 @@
         <div data-load="templates/footer.html">
         </div>
     </footer>
+
+
+<script>
+// function getValue(){
+   
+//     import * as tf from '@tensorflow/tfjs-node' //importing the tensorflow
+
+//     var grn_liv = parseInt(document.getElementById("lspace").value); //getting the green living space
+//     var first_footage = parseInt(document.getElementById("sfoot").value); //getting the 1st square 
+     
+//     var bedrooms = parseInt(document.getElementById("nbed").value);
+//     var bathrooms = parseInt(document.getElementById("nbath").value);
+//     var other_rooms = parseInt(document.getElementById("n_otherrooms").value);
+
+//     var rooms = bedrooms + bathrooms + other_rooms; //getting the rooms
+
+//     //document.getElementById("v").innerHTML = parseInt(document.getElementById("lspace").value) + parseInt(document.getElementById("sfoot").value);
+
+
+
+
+//     //muy importante
+//     const model = await tf.loadLayersModel('   #Insert filepath on webserver here#   /model.json'); //need to upload the model.json to server and then use link
+//     //muy importante
+    
+
+//     input_initial = tf.tensor( [grn_liv, rooms, first_footage] , [1,3], 'float64');  //[1,3] and 'float64' are constant do not change.
+//     input = tf.math.log(input_initial);
+
+//     prediction = model.predict(  tf.tensor2d(input)  );
+//     output = tf.math.exp(prediction);
+
+
+//     document.getElementById("v").innerHTML = rooms2;
+// }
+//getValue();
+</script>    
+
+
 
 </body>
 
