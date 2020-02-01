@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>http://bpawebteam.org/</loc>
+  <lastmod>2020-02-01T05:26:14+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://bpawebteam.org/pages/what.html</loc>
+  <lastmod>2020-02-01T05:26:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bpawebteam.org/pages/benefits.html</loc>
+  <lastmod>2020-02-01T05:26:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bpawebteam.org/pages/challenges.html</loc>
+  <lastmod>2020-02-01T05:26:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bpawebteam.org/pages/types.html</loc>
+  <lastmod>2020-02-01T05:26:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bpawebteam.org/pages/predictor.html</loc>
+  <lastmod>2020-02-01T05:26:17+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bpawebteam.org/pages/selector.html</loc>
+  <lastmod>2020-02-01T05:26:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bpawebteam.org/pages/finder.html</loc>
+  <lastmod>2020-02-01T05:26:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bpawebteam.org/pages/features.html</loc>
+  <lastmod>2020-02-01T05:26:16+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bpawebteam.org/pages/support.html</loc>
+  <lastmod>2020-02-01T05:26:17+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
