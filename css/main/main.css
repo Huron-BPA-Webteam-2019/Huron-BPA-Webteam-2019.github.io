@@ -39,6 +39,11 @@ body {
   opacity: 1;
 }
 
+.invert-img a img {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
 .bg-dark {
   background: #183917 !important;
 }
